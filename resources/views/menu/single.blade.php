@@ -4,7 +4,7 @@
         <h2 class="single-heading">{{$menuItem->dishTitle}}</h2>
 
         <div class="single-img-con">
-            <img class="single-img-big" src="{{url('/resources/Images/menu/Hunters-Chicken-Pasta-Bake_007.jpg')}}" alt="">
+            <img class="single-img-big" src="{{url("resources/Images/menu/food-images/" . $menuItem->image_path)}}" alt="">
         </div>
 
         <div class="single-row">

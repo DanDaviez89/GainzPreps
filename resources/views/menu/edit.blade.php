@@ -3,7 +3,7 @@
         <div class="menu-list-container">
             <h1>Edit Menu Item</h1>
 
-            <form action="/admin/menu/{{$item->id}}/edit" method="POST">
+            <form action="/admin/menu/{{$item->id}}/edit" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="field">
                     <label for="dishTitle">Dish Title </label>
@@ -55,6 +55,15 @@
                     <input type="double" value="{{$item->price}}" name="price">
     
                     @error('price')
+                        <p>{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="field">      
+                    <label for="image">Image </label>
+                    <input type="file" name="image">
+
+                    @error('image')
                         <p>{{$message}}</p>
                     @enderror
                 </div>

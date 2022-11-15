@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="col-container">
-                            <img src="{{url('/resources/Images/menu/Hunters-Chicken-Pasta-Bake_007.jpg')}}" alt="">
+                            <img src="{{url('/resources/Images/menu/food-images/' . $item->image_path)}}" alt="">
                         </div>
 
                         <div class="col-container">

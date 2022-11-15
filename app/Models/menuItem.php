@@ -17,6 +17,7 @@ class menuItem extends Model
         'calories',
         'carbs',
         'price',
+        'image_path',
     ];
 
     public function allegens() {

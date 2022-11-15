@@ -27,7 +27,7 @@
                 @foreach ($menuItems as $item)
                     <div class="menuContainer">
                         <h1 class="bold">{{$item->dishTitle}}</h1>
-                        <img class="info-image" src="{{url("resources/Images/menu/Hunters-Chicken-Pasta-Bake_007.jpg")}}" alt="">
+                        <img class="info-image" src="{{url("resources/Images/menu/food-images/" . $item->image_path)}}" alt="">
                         <p id="price"><span class="red-text bold">£{{$item->price}}</span> Per Meal</p>
                         <p class="bold">Description</p> 
                         <p>{{$item->description}}</p>
