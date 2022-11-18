@@ -16,4 +16,4 @@ document.getElementById("minus-1").addEventListener("click", function() {
     var currentQan = document.getElementById("quantity").innerHTML = currentQan;
 })
 
-console.log(array);
+document.querySelectorAll("button-col");

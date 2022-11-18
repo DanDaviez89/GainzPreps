@@ -26,7 +26,7 @@ Route::get('/menu/{id}/show', [menuController::class, 'showSingle']);
 
 Route::get('/cart', function () {
     return view('cart.cart');
-})->middleware("auth");
+});
 
 Route::group(['prefix' => '/admin', 'middleware' => 'adminCheck'], function () {
     Route::Get('/index', [AdminController::class, 'index']);
@@ -52,4 +52,5 @@ Route::group(['prefix' => '/user', [userController::class]], function () {
     Route::get('{id}/edit', [userController::class, 'edit'])->middleware("auth");
     Route::post('{id}/edit', [userController::class, 'submitEdit'])->middleware("auth");
     Route::post('/logout', [userController::class, 'logout'])->middleware("auth");
+    Route::post('/create-review/{id}', [userController::class, 'postReview'])->middleware('auth');
 });

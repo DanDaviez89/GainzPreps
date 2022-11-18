@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Models\Allegen;
 use App\Models\menuItem;
 use Illuminate\Http\Request;

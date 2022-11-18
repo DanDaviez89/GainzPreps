@@ -60,12 +60,13 @@
                         </div>
 
                         <a href="/menu/{{$item->id}}/show"><button class="clear long">View Item</button></a>
-                        <div class="button-col">
-                            <button class="clear">Add</button>
-                            <button id="minus-{{$item->id}}" class="clear">-</button>
-                            <button id="numberTracker" class="clear"><p id="quantity">0</p></button>
-                            <button id="plus-{{$item->id}}" class="clear">+</button>
-                        </div>
+                        
+                        <form action="#" class="button-col">
+                            <button type="submit" class="clear">Add</button>
+                            <button type="button" class="clear minus-item">-</button>
+                            <input type="number" id="numberTracker" class="clear">
+                            <button type="button" class="clear add-item">+</button>
+                        </form>
                     </div>
                 @endforeach
             </div>

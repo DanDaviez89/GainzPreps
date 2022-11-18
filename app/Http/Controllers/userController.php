@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Review;
+use App\Models\menuItem;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -104,5 +106,19 @@ class userController extends Controller
         ]);
 
         return redirect('/user/account')->with('message', 'Edit Successful');
+    }
+
+    public function postReview($id, Request $request) {
+        $request->validate([
+            'description' => "required|min:3"
+        ]);
+
+        Review::create([
+            'description' => $request->description,
+            'user_id' => auth()->id(),
+            'menu_items_id' => $id
+        ]);
+
+        return back()->with('message', 'Review Successfully Uplaoded');
     }
 }

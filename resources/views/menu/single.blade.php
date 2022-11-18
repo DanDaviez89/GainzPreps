@@ -73,4 +73,34 @@
             <button id="plus-{{$menuItem->id}}" class="clear">+</button>
         </div>
     </div>
+
+    <div class="single-container">
+        <h2>Reviews</h2>
+
+        <h2>Leave a Review</h2>
+
+        <form method="POST" action="/user/create-review/{{$menuItem->id}}">
+            @csrf
+            <div class="leave-review-container">
+                <div class="review-description">
+                    <P>Review Description</P>
+                    <textarea name="description"></textarea>
+                </div>
+                
+                <div class="star-rating">
+                    <p>Star Rating</p>
+                    
+                    <div class="star-con">
+                        <img src="{{url('/resources/Images/blankStar.svg')}}" alt="">
+                        <img src="{{url('/resources/Images/blankStar.svg')}}" alt="">
+                        <img src="{{url('/resources/Images/blankStar.svg')}}" alt="">
+                        <img src="{{url('/resources/Images/blankStar.svg')}}" alt="">
+                        <img src="{{url('/resources/Images/blankStar.svg')}}" alt="">
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </x-layout-header>

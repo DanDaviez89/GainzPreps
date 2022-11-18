@@ -23,4 +23,8 @@ class menuItem extends Model
     public function allegens() {
         return $this->belongsToMany(Allegen::class);
     }
+
+    public function reviews() {
+        return $this->hasMany(Review::class);
+    }
 }
