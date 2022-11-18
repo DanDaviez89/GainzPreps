@@ -116,7 +116,7 @@ class userController extends Controller
         Review::create([
             'description' => $request->description,
             'user_id' => auth()->id(),
-            'menu_items_id' => $id
+            'menu_item_id' => $id
         ]);
 
         return back()->with('message', 'Review Successfully Uplaoded');

@@ -76,6 +76,14 @@
 
     <div class="single-container">
         <h2>Reviews</h2>
+        @forelse($menuItem->reviews as $review)
+            <div class="review-container">
+                <h3>{{$review->user->firstName}} {{$review->user->lastName}}</h3>
+                <p>{{$review->description}}</p> 
+            </div>
+        @empty
+            <p>No Reviews Found</p>
+        @endforelse
 
         <h2>Leave a Review</h2>
 

@@ -409,12 +409,21 @@ nav div img {
     grid-template-columns: 2fr 1fr;
     overflow: hidden;
     column-gap: 0.5rem;
+    margin: 1rem auto 1rem;
 }
 
 .leave-review-container textarea {
     background-color: #D9D9D9;
     padding: 0.5rem;
     width: 100%;
+}
+
+.review-container {
+    width: 100%;
+    border: black 1px solid;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem auto 1rem ;
 }
 
 .review-description {
@@ -434,12 +443,6 @@ nav div img {
     border: 1px solid black;
     padding: 0.3rem 0.5rem;
     margin-top: 0.5rem;
-}
-
-.star-con {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .star-con img {

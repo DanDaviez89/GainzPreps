@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('description');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('menu_items_id');
+            $table->unsignedBigInteger('menu_item_id');
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->foreign('menu_items_id')
+            $table->foreign('menu_item_id')
                 ->references('id')
                 ->on('menu_items')
                 ->onDelete('cascade');
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::DropsIfExists('reviews');
+        Schema::dropIfExists('reviews');
     }
 };
