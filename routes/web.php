@@ -24,9 +24,8 @@ Route::get('/', function () {
 Route::get('/menu/show', [menuController::class, 'show']);
 Route::get('/menu/{id}/show', [menuController::class, 'showSingle']);
 
-Route::get('/cart', function () {
-    return view('cart.cart');
-});
+Route::get('/cart', [menuController::class, 'cartView']);
+Route::get('/add-to-cart/{id}', [menuController::class, 'add_to_cart']);
 
 Route::group(['prefix' => '/admin', 'middleware' => 'adminCheck'], function () {
     Route::Get('/index', [AdminController::class, 'index']);

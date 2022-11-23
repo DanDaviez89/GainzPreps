@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Session;
+use App\Models\Cart;
 use App\Models\Allegen;
 use App\Models\menuItem;
 use Illuminate\Http\Request;
 use App\Models\allegens_menu_item;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Contracts\Session\Session as SessionSession;
 
 class menuController extends Controller
 {
@@ -142,5 +144,27 @@ class menuController extends Controller
         $item->allegens()->attach($request->allegens);
 
         return back()->with('message', "Item Updated");
+    }
+
+    public function add_to_cart($id) {
+        $menuItem = menuItem::find($id);
+
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+
+        $cart = new Cart($oldCart);
+
+        $cart->add($menuItem, $menuItem->id);
+
+        Session::put('cart', $cart);
+
+        return back();
+    }
+
+    public function cartView() {
+        $cart = Session::has('cart') ? Session::get('cart') : null;
+
+        return view('cart.cart', [
+            'cart' => $cart,
+        ]);
     }
 }

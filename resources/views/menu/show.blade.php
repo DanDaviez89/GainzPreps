@@ -60,8 +60,9 @@
                         </div>
 
                         <a href="/menu/{{$item->id}}/show"><button class="clear long">View Item</button></a>
-                        
-                        <form action="#" class="button-col">
+                        <a href="/add-to-cart/{{$item->id}}"><button class="clear long">Add Item</button></a>
+
+                        <form action="/add-to-cart/{{$item->id}}" class="button-col">
                             <button type="submit" class="clear">Add</button>
                             <button type="button" class="clear minus-item">-</button>
                             <input type="number" id="numberTracker" class="clear">

@@ -73,7 +73,7 @@
                 <div class="allegens-checklist">
                     @foreach($allegens as $allegen)   
                         <div class="allegen-con">
-                            <input type="checkbox" name="allegens[]" value="{{$allegen->id}}"/>
+                            <input type="checkbox" name="allegens[]" value="{{$allegen->id}}" {{ $item->allegens->contains($allegen->id) ? 'checked' : '' }}/>
                             <label class="form-check-label">{{$allegen->allegen}}</label>
                         </div>
 

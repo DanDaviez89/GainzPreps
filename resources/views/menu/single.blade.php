@@ -1,6 +1,7 @@
 <x-layout-header>
 
     <div class="single-container">
+        <a href="/menu/show">Back</a>
         <h2 class="single-heading">{{$menuItem->dishTitle}}</h2>
 
         <div class="single-img-con">
