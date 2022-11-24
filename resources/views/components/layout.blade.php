@@ -22,6 +22,12 @@
             </div>
         </a>
 
+        <a href="/menu/show">
+            <div class="nav-item">
+                <img src="{{asset("/resources/Images/restaurant-menu.svg")}}" alt="Account">
+            </div>
+        </a>
+
         <a href="/user/account">
             <div class="nav-item">
                 <img src="{{asset("resources\Images\account.svg")}}" alt="Account">

@@ -157,7 +157,7 @@ class menuController extends Controller
 
         Session::put('cart', $cart);
 
-        return back();
+        return back()->with('message', 'Item Added To Cart');
     }
 
     public function cartView() {
@@ -165,6 +165,22 @@ class menuController extends Controller
 
         return view('cart.cart', [
             'cart' => $cart,
+        ]);
+    }
+
+    public function getCheckout() {
+        if(!Session::has('cart')) {
+            return view('cart.cart');
+        }
+        
+        $oldCart = Session::get('cart');
+
+        $cart = new Cart($oldCart);
+        
+        $total = $cart->totalPrice;
+
+        return view('cart.checkout', [
+            'total' => $total,
         ]);
     }
 }
