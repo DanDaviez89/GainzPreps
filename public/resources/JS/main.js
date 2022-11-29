@@ -1,3 +1,4 @@
+/*
 document.getElementById("plus-1").addEventListener("click", function() {
     var currentQan = document.getElementById("quantity").textContent;
 
@@ -15,5 +16,21 @@ document.getElementById("minus-1").addEventListener("click", function() {
 
     var currentQan = document.getElementById("quantity").innerHTML = currentQan;
 })
+*/
 
-document.querySelectorAll("button-col");
+let menuItems = document.querySelectorAll(".qanSelector");
+let minusButtons  = document.querySelectorAll(".minus-item");
+let addButtons  = document.querySelectorAll(".add-item");
+
+menuItems.forEach(function(item, index) {
+    let itemChildNodes = item.childNodes;
+
+    itemChildNodes.forEach(function (item) { 
+        if(item.hasClass(minusItem)){
+            console.log(item)
+        }
+     })
+});
+
+
+

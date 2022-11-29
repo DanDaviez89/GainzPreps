@@ -3,8 +3,6 @@
     @include('admin.Partials.adminNav')
     
     <div class="admin-container">
-       
-
         <div class="menu-list-container">
             <h2>Allegen</h2>
 

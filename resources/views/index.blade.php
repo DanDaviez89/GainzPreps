@@ -44,4 +44,16 @@
 
         <button x-on:click="open = !open" class="solid">Toggle Name</button>
     </div>
+
+    <div class="alpine-container">
+        <livewire:counter />  
+    </div>
+
+    <div class="alpine-container">
+        <livewire:calculator />
+    </div>
+    
+    <div class="alpine-container">
+        <livewire:todo-list />
+    </div>
 </x-layout>

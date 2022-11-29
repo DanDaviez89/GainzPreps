@@ -29,10 +29,12 @@ Route::get('/add-to-cart/{id}', [menuController::class, 'add_to_cart']);
 Route::get('/checkout', [menuController::class, 'getCheckout']);
 
 Route::group(['prefix' => '/admin', 'middleware' => 'adminCheck'], function () {
-    Route::Get('/index', [AdminController::class, 'index']);
+    Route::get('/index', [AdminController::class, 'index']);
     Route::get('/allegen', [allegenController::class, 'index']);
     Route::post('/allegen/create', [allegenController::class, 'create']);
     Route::post('/allegen/{id}/delete', [allegenController::class, 'delete']);
+
+    Route::get('/reviews', [AdminController::class, 'viewReviews']);
 
     Route::group(['prefix' => '/menu', [menuController::class]], function () {
         Route::get('/create', [menuController::class, 'createForm']);

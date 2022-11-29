@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kite+One&display=swap" rel="stylesheet">
+
+    @livewireStyles
+
 </head>
 <body>
     <x-flash-message/>
@@ -33,10 +36,20 @@
                 <img src="{{asset("resources\Images\account.svg")}}" alt="Account">
             </div>
         </a>
-    </nav>
+
+        @if(auth()->user() && auth()->user()->isAdmin == 1)
+            <a href="/admin/index">
+                <div class="nav-item">
+                    <img src="{{asset("resources\Images\admin-button.svg")}}" alt="Account">
+                </div>
+            </a>
+        @endif
+    </nav> 
 
     <main>
         {{$slot}}
     </main>
+
+    @livewireScripts
 </body>
 </html>

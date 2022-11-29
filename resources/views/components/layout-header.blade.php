@@ -36,6 +36,14 @@
                     <img src="{{asset("resources\Images\account.svg")}}" alt="Account">
                 </div>
             </a>
+
+            @if(auth()->user() && auth()->user()->isAdmin == 1)
+                <a href="/admin/index">
+                    <div class="nav-item">
+                        <img src="{{asset("resources\Images\admin-button.svg")}}" alt="Account">
+                    </div>
+                </a>
+            @endif
         </nav>
     </header>
 
